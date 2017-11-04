@@ -1,25 +1,37 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+//import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
-/**
- * Generated class for the BudgetViewPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
 
-@IonicPage()
+
 @Component({
-  selector: 'page-budget-view',
-  templateUrl: 'budget-view.html',
-})
+  template: `
+    <ion-header>
+      <ion-navbar>
+        <ion-title>Tabs</ion-title>
+      </ion-navbar>
+    </ion-header>
+    <ion-content>
+    </ion-content>
+    <ion-tabs class="tabs-basic">
+      <ion-tab tabTitle="Start" [root]="rootPage"></ion-tab>
+      <ion-tab tabTitle="Budget" [root]="rootPage"></ion-tab>
+      <ion-tab tabTitle="Review" [root]="rootPage"></ion-tab>
+      <ion-tab tabTitle="Submit" [root]="rootPage"></ion-tab>
+    </ion-tabs>
+`})
+export class TabBasicContentPage {
+
+}
+
+@Component({
+  template: `
+    <ion-tabs class="tabs-basic">
+      <ion-tab tabTitle="Start" [root]="rootPage"></ion-tab>
+      <ion-tab tabTitle="Budget" [root]="rootPage"></ion-tab>
+      <ion-tab tabTitle="Review" [root]="rootPage"></ion-tab>
+      <ion-tab tabTitle="Submit" [root]="rootPage"></ion-tab>
+    </ion-tabs>
+`})
 export class BudgetViewPage {
-
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
-  }
-
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad BudgetViewPage');
-  }
-
+  rootPage = TabBasicContentPage;
 }

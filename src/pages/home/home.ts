@@ -11,7 +11,6 @@ import { BudgetViewPage } from '../budget-view/budget-view'
 export class HomePage {
 
   constructor(public navCtrl: NavController) {
-
   }
 
   goToPrimary(){

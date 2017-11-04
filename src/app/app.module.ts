@@ -2,12 +2,14 @@ import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 
+
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
 import { PrimaryViewPage } from '../pages/primary-view/primary-view'
 import { SecondaryViewPage } from '../pages/secondary-view/secondary-view'
 import { BudgetViewPage } from '../pages/budget-view/budget-view'
+import { TabBasicContentPage } from '../pages/budget-view/budget-view'
 import { TransactionsViewPage } from '../pages/transactions-view/transactions-view'
 import { UsersViewPage } from '../pages/users-view/users-view'
 import { DashboardViewPage } from '../pages/dashboard-view/dashboard-view'
@@ -25,6 +27,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     PrimaryViewPage,
     SecondaryViewPage,
     BudgetViewPage,
+    TabBasicContentPage,
     TransactionsViewPage,
     DashboardViewPage,
     UsersViewPage,
@@ -42,6 +45,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     PrimaryViewPage,
     SecondaryViewPage,
     BudgetViewPage,
+    TabBasicContentPage,
     TransactionsViewPage,
     DashboardViewPage,
     UsersViewPage,
