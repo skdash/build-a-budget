@@ -12,11 +12,14 @@ export class RestapiServiceProvider {
   headers = new Headers({
     'Content-Type': 'application/json'
   });
+
   body : any = {"customer_id" : 100720000}
+  categories : string[] = new Array() as Array<string>
 
   constructor(public http: Http) {
     console.log('Hello RestapiServiceProvider Provider');
     console.log(this.getData())
+    this.initCategories()
   }
 
   getData() {
@@ -32,5 +35,16 @@ export class RestapiServiceProvider {
           resolve(this.data);
         });
     });
+  }
+
+  initCategories(){
+    this.categories.push('Transportation')
+    this.categories.push('Food')
+    this.categories.push('Housing')
+    this.categories.push('Entertainment')
+    this.categories.push('Other')
+  }
+  getCategories(){
+    return this.categories
   }
 }
