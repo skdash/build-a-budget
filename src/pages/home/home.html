@@ -8,11 +8,15 @@
 </ion-header>
 
 <ion-content padding>
-  <h3>Ionic Menu Starter</h3>
+  <ion-list>
+    <ion-item>
+      <button ion-button secondary block>Primary AU </button>
+    </ion-item>
 
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will show you the way.
-  </p>
+    <ion-item>
+      <button ion-button secondary block (click)="goToSecondary()">Secondary AU</button>
+    </ion-item>
 
-  <button ion-button secondary menuToggle>Toggle Menu</button>
+</ion-list>
+  <!--<button ion-button secondary menuToggle>Toggle Menu</button>-->
 </ion-content>
