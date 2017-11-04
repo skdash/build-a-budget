@@ -3,6 +3,7 @@ import { NavController } from 'ionic-angular';
 import { PrimaryViewPage } from '../primary-view/primary-view'
 import { SecondaryViewPage } from '../secondary-view/secondary-view'
 import { BudgetViewPage } from '../budget-view/budget-view'
+import { RestapiServiceProvider } from '../../providers/restapi-service/restapi-service'
 
 @Component({
   selector: 'page-home',
@@ -10,7 +11,8 @@ import { BudgetViewPage } from '../budget-view/budget-view'
 })
 export class HomePage {
 
-  constructor(public navCtrl: NavController) {
+  constructor(public navCtrl: NavController, public rp : RestapiServiceProvider) {
+    this.rp.getData()
   }
 
   goToPrimary(){
