@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component,Input } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { RestapiServiceProvider } from '../../providers/restapi-service/restapi-service'
 import {ReviewBudgetViewPage} from '../reviewbudget-view/reviewbudget-view'
@@ -8,7 +8,8 @@ import {ReviewBudgetViewPage} from '../reviewbudget-view/reviewbudget-view'
   templateUrl: 'editbudget-view.html'
 })
 export class EditBudgetViewPage {
-  total : number = 0
+  @Input() total = 0;
+  //total : number = 0
   categories : string [] = new Array()
   public transactions = [];
   public transactionbycustomer = [];
@@ -17,6 +18,12 @@ export class EditBudgetViewPage {
   public september_total = 0;
   public october_rewards = 0;
   public september_rewards = 0;
+
+  val1 : string = '0.00'
+  val2 : string = '0.00'
+  val3 : string = '0.00'
+  val4 : string = '0.00'
+  val0 : string = '0.00'
 
   constructor(public navCtrl: NavController, public rp : RestapiServiceProvider) {
     this.rp.getCategories().forEach((data) => this.categories.push(data))
@@ -44,6 +51,11 @@ export class EditBudgetViewPage {
 
   smartBudget(){
     console.log("Length: ", this.selected_transactions.length);
+    this.value1 = '$100.50'
+    this.value2 = '$43.00'
+    this.value3 = '$77.00'
+    this.value4 = '$90.89'
+    this.value5 = '$150.00'
 
     for (var k=0;k<this.selected_transactions.length ;k++){
      if(this.selected_transactions[k].year == 2017 && this.selected_transactions[k].month == "October"){
