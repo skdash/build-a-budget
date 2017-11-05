@@ -2,6 +2,7 @@ import { Component,Input } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { RestapiServiceProvider } from '../../providers/restapi-service/restapi-service'
 import {ReviewBudgetViewPage} from '../reviewbudget-view/reviewbudget-view'
+import { AlertController } from 'ionic-angular';
 
 @Component({
   selector: 'page-editbudget',
@@ -25,7 +26,7 @@ export class EditBudgetViewPage {
   val4 : string = '0.00'
   val0 : string = '0.00'
 
-  constructor(public navCtrl: NavController, public rp : RestapiServiceProvider) {
+  constructor(public navCtrl: NavController, public rp : RestapiServiceProvider, public alertCtrl: AlertController) {
     this.rp.getCategories().forEach((data) => this.categories.push(data))
 
     this.transactions = this.rp.returntransactionData();
@@ -79,5 +80,28 @@ export class EditBudgetViewPage {
   recalculateTotal(newValue){
     console.log('In recalculate method ' + newValue)
     //this.total = this.total + newValue
+  }
+
+  showConfirmation(){
+      let prompt = this.alertCtrl.create({
+      title: 'Confirmation!',
+      message: "Budgeted Total = $461.39<br>Projected Rewards =$6.92",
+      buttons: [
+        {
+          text: 'Cancel',
+          handler: data => {
+            console.log('Cancel clicked');
+          }
+        },
+        {
+          text: 'Submit',
+          handler: data => {
+            this.navCtrl.pop();
+            console.log('Saved clicked');
+          }
+        }
+      ]
+    });
+    prompt.present();
   }
 }
