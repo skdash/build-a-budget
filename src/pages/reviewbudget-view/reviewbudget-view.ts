@@ -14,7 +14,7 @@ export class ReviewBudgetViewPage {
 
   showConfirmation(){
       let prompt = this.alertCtrl.create({
-      title: 'Login',
+      title: 'Approve Budget',
       message: "Enter review comments",
       inputs: [
         {

@@ -8,5 +8,11 @@
 
 
 <ion-content padding>
+  <ion-list>
+    <ion-item *ngFor="let trans of selected_transactions">
+   	  <h2>{{trans.merchant_name}} {{trans.amount}}</h2>
+    </ion-item>
 
+</ion-list>
+  <!--<button ion-button secondary menuToggle>Toggle Menu</button>-->
 </ion-content>

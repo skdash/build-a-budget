@@ -7,9 +7,12 @@ export class RestapiServiceProvider {
 
   data : any;
   customerdata = [];
+  transactiondata : any;
   proxyUrl = 'https://cors-anywhere.herokuapp.com/'
   apiUrl = 'https://3hkaob4gkc.execute-api.us-east-1.amazonaws.com/prod/au-hackathon/accounts';
   customerUrl = 'https://3hkaob4gkc.execute-api.us-east-1.amazonaws.com/prod/au-hackathon/customers';
+  transactionsUrl = 'https://3hkaob4gkc.execute-api.us-east-1.amazonaws.com/prod/au-hackathon/transactions';
+
 
   headers = new Headers({
     'Content-Type': 'application/json'
@@ -22,11 +25,13 @@ export class RestapiServiceProvider {
     console.log('Hello RestapiServiceProvider Provider');
     this.initCategories()
     this.getData()
+    this.getTransactions()
+
     setTimeout(() => 
     {
       this.getCustomers();
     },
-    5000);
+    3000);
 
   }
 
@@ -46,7 +51,6 @@ export class RestapiServiceProvider {
   }
 
   getCustomers() {
-     console.log('called getCustomers');
 
      for (var i = 0; i < this.data[0].authorized_users.length; i++){
        console.log(this.data[0].authorized_users[i].customer_id);
@@ -55,16 +59,29 @@ export class RestapiServiceProvider {
   }
 
   getCustomer(cuid) {
-     console.log('called getCustomer with cuid', cuid);
     this.body = {"customer_id" : cuid}
 
     return new Promise(resolve => {
       this.http.post(this.proxyUrl + this.customerUrl, JSON.stringify(this.body),this.headers)
         .map(res => res.json())
         .subscribe(data => {
-          console.log('inside response', data);
           this.customerdata.push(data);
           resolve(this.customerdata);
+        });
+    });
+  }
+
+  getTransactions() {
+  if (this.transactiondata) {
+    return Promise.resolve(this.transactiondata).then(data => console.log('Got the transactiondata!'));
+  }
+
+    return new Promise(resolve => {
+      this.http.post(this.proxyUrl + this.transactionsUrl, JSON.stringify(this.body),this.headers)
+        .map(res => res.json())
+        .subscribe(data => {
+          this.transactiondata = data;
+          resolve(this.transactiondata);
         });
     });
   }
@@ -75,6 +92,10 @@ export class RestapiServiceProvider {
 
   returncustomerData(){
     return this.customerdata;
+  }
+
+  returntransactionData(){
+    return this.transactiondata;
   }
 
   initCategories(){
