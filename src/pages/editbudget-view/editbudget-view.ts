@@ -20,11 +20,11 @@ export class EditBudgetViewPage {
   public october_rewards = 0;
   public september_rewards = 0;
 
-  value1 : string = '0.00'
-  value2 : string = '0.00'
-  value3 : string = '0.00'
-  value4 : string = '0.00'
-  value5 : string = '0.00'
+  val1 : string = '0.00'
+  val2 : string = '0.00'
+  val3 : string = '0.00'
+  val4 : string = '0.00'
+  val0 : string = '0.00'
 
   constructor(public navCtrl: NavController, public rp : RestapiServiceProvider, public alertCtrl: AlertController) {
     this.rp.getCategories().forEach((data) => this.categories.push(data))
