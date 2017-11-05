@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { BudgetViewPage } from '../budget-view/budget-view'
+//import { BudgetViewPage } from '../budget-view/budget-view'
 import { TransactionsViewPage } from '../transactions-view/transactions-view'
+import { EditBudgetViewPage } from '../editbudget-view/editbudget-view'
 
 /**
  * Generated class for the SecondaryViewPage page.
@@ -21,7 +22,8 @@ export class SecondaryViewPage {
   }
 
   goToBudget(){
-    this.navCtrl.push(BudgetViewPage);
+    //this.navCtrl.push(BudgetViewPage);
+    this.navCtrl.push(EditBudgetViewPage)
   }
 
   goToTransactions(){

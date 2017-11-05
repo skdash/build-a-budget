@@ -8,4 +8,6 @@ import { NavController } from 'ionic-angular';
 })
 export class ReviewBudgetViewPage {
 
+  constructor() { }
+
 }
