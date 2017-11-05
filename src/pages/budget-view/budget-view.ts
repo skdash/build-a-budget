@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { StartBudgetViewPage } from '../startbudget-view/startbudget-view'
-import { EditBudgetPage } from '../editbudget-view/editbudget-view'
-import { ReviewBudgetPage } from '../reviewbudget-view/reviewbudget-view'
-import { SubmitBudgetPage } from '../submitbudget-view/submitbudget-view'
+import { EditBudgetViewPage } from '../editbudget-view/editbudget-view'
+import { ReviewBudgetViewPage } from '../reviewbudget-view/reviewbudget-view'
+import { SubmitBudgetViewPage } from '../submitbudget-view/submitbudget-view'
  
 
 
@@ -37,9 +37,9 @@ export class TabBasicContentPage {
 `})
 export class BudgetViewPage {
   tab1Root = StartBudgetViewPage;
-  tab2Root = EditBudgetPage;
-  tab3Root = ReviewBudgetPage;
-  tab4Root = SubmitBudgetPage;
+  tab2Root = EditBudgetViewPage;
+  tab3Root = ReviewBudgetViewPage;
+  tab4Root = SubmitBudgetViewPage;
   constructor() {
        
   }

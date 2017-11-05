@@ -1,12 +1,19 @@
 <ion-header>
-
   <ion-navbar>
-    <ion-title>Dashboard</ion-title>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Create Budget</ion-title>
   </ion-navbar>
-
 </ion-header>
 
-
 <ion-content padding>
+  <ion-list>
+    <ion-item>
+      <button ion-button secondary block (click)="goToBudget()">Create Budget</button>
+    </ion-item>
+    
 
+</ion-list>
+  <!--<button ion-button secondary menuToggle>Toggle Menu</button>-->
 </ion-content>
