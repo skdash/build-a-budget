@@ -59,6 +59,7 @@ export class RestapiServiceProvider {
   }
 
   getCustomer(cuid) {
+     console.log('called getCustomer with cuid', cuid);
     this.body = {"customer_id" : cuid}
 
     return new Promise(resolve => {
@@ -80,6 +81,7 @@ export class RestapiServiceProvider {
       this.http.post(this.proxyUrl + this.transactionsUrl, JSON.stringify(this.body),this.headers)
         .map(res => res.json())
         .subscribe(data => {
+          console.log("inside gettransactions: ",data)
           this.transactiondata = data;
           resolve(this.transactiondata);
         });
