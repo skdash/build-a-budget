@@ -15,7 +15,10 @@ import { TransactionsViewPage } from '../pages/transactions-view/transactions-vi
 import { UsersViewPage } from '../pages/users-view/users-view'
 import { DashboardViewPage } from '../pages/dashboard-view/dashboard-view'
 import { ApproveViewPage } from '../pages/approve-view/approve-view'
-
+import { StartBudgetViewPage } from '../pages/startbudget-view/startbudget-view'
+import { EditBudgetViewPage } from '../pages/editbudget-view/editbudget-view'
+import { ReviewBudgetViewPage } from '../pages/reviewbudget-view/reviewbudget-view'
+import { SubmitBudgetViewPage } from '../pages/submitbudget-view/submitbudget-view'
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -33,7 +36,11 @@ import { RestapiServiceProvider } from '../providers/restapi-service/restapi-ser
     TransactionsViewPage,
     DashboardViewPage,
     UsersViewPage,
-    ApproveViewPage
+    ApproveViewPage,
+    StartBudgetViewPage,
+    EditBudgetViewPage,
+    ReviewBudgetViewPage,
+    SubmitBudgetViewPage
   ],
   imports: [
     BrowserModule,
@@ -52,7 +59,11 @@ import { RestapiServiceProvider } from '../providers/restapi-service/restapi-ser
     TransactionsViewPage,
     DashboardViewPage,
     UsersViewPage,
-    ApproveViewPage
+    ApproveViewPage,
+    StartBudgetViewPage,
+    EditBudgetViewPage,
+    ReviewBudgetViewPage,
+    SubmitBudgetViewPage
   ],
   providers: [
     StatusBar,
