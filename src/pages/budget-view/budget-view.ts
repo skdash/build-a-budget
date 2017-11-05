@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
-//import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
+import { StartBudgetViewPage } from '../startbudget-view/startbudget-view'
+import { EditBudgetPage } from '../editbudget-view/editbudget-view'
+import { ReviewBudgetPage } from '../reviewbudget-view/reviewbudget-view'
+import { SubmitBudgetPage } from '../submitbudget-view/submitbudget-view'
+ 
 
 
 @Component({
@@ -12,11 +15,11 @@ import { Component } from '@angular/core';
     </ion-header>
     <ion-content>
     </ion-content>
-    <ion-tabs class="tabs-basic">
-      <ion-tab tabTitle="Start" [root]="rootPage"></ion-tab>
-      <ion-tab tabTitle="Budget" [root]="rootPage"></ion-tab>
-      <ion-tab tabTitle="Review" [root]="rootPage"></ion-tab>
-      <ion-tab tabTitle="Submit" [root]="rootPage"></ion-tab>
+    <ion-tabs tabsPlacement="top">
+      <ion-tab tabTitle="Start" [root]="tab1Root"></ion-tab>
+      <ion-tab tabTitle="Budget" [root]="tab2Root"></ion-tab>
+      <ion-tab tabTitle="Review" [root]="tab3Root"></ion-tab>
+      <ion-tab tabTitle="Submit" [root]="tab4Root"></ion-tab>
     </ion-tabs>
 `})
 export class TabBasicContentPage {
@@ -25,13 +28,19 @@ export class TabBasicContentPage {
 
 @Component({
   template: `
-    <ion-tabs class="tabs-basic">
-      <ion-tab tabTitle="Start" [root]="rootPage"></ion-tab>
-      <ion-tab tabTitle="Budget" [root]="rootPage"></ion-tab>
-      <ion-tab tabTitle="Review" [root]="rootPage"></ion-tab>
-      <ion-tab tabTitle="Submit" [root]="rootPage"></ion-tab>
+    <ion-tabs class="tabs-icon-top tabs-balanced">
+      <ion-tab tabTitle="Start" [root]="tab1Root"></ion-tab>
+      <ion-tab tabTitle="Budget" [root]="tab2Root"></ion-tab>
+      <ion-tab tabTitle="Review" [root]="tab3Root"></ion-tab>
+      <ion-tab tabTitle="Submit" [root]="tab4Root"></ion-tab>
     </ion-tabs>
 `})
 export class BudgetViewPage {
-  rootPage = TabBasicContentPage;
+  tab1Root = StartBudgetViewPage;
+  tab2Root = EditBudgetPage;
+  tab3Root = ReviewBudgetPage;
+  tab4Root = SubmitBudgetPage;
+  constructor() {
+       
+  }
 }
