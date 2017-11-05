@@ -11,19 +11,36 @@
 <ion-content padding>
 
   <ion-list>
-    <ion-item *ngFor='let category of categories'>
+    <ion-item>
+      <ion-label stacked>{{categories[0]}}</ion-label>
+      <ion-input type="text" [(ngModel)]="value1" placeholder="$0.00" value = {{value1}}></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked>{{categories[1]}}</ion-label>
+      <ion-input type="text" [(ngModel)]="value2" placeholder="$0.00" value = {{value2}}></ion-input>
+    </ion-item><ion-item>
+      <ion-label stacked>{{categories[2]}}</ion-label>
+      <ion-input type="text" [(ngModel)]="value3" placeholder="$0.00" value = {{value3}}></ion-input>
+    </ion-item><ion-item>
+      <ion-label stacked>{{categories[3]}}</ion-label>
+      <ion-input type="text" [(ngModel)]="value4" placeholder="$0.00" value = {{value4}}></ion-input>
+    </ion-item><ion-item>
+      <ion-label stacked>{{categories[4]}}</ion-label>
+      <ion-input type="text" [(ngModel)]="value5" placeholder="$0.00" value = {{value5}}></ion-input>
+    </ion-item>
+    <!--<ion-item *ngFor='let category of categories'>
       <ion-label floating>{{category}}</ion-label>
-      <ion-input type="number" (change)="recalculateTotal($event)"></ion-input>
-    </ion-item>
-    <ion-item [(ngModel)]="total" ngDefaultControl>
+      <ion-input type="number"></ion-input>
+    </ion-item>-->
+    <!--<ion-item ngDefaultControl>
       ${{total}}
-    </ion-item>
+    </ion-item>-->
 </ion-list>
 
   <button ion-button item-start secondary block (click)="smartBudget()">
     Smart Budget
   </button>
-  <button ion-button item-end secondary block (click)="routeBack()">
+  <button ion-button item-end secondary block (click)="showConfirmation()">
     Propose
   </button>
 
