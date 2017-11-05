@@ -8,15 +8,24 @@
 </ion-header>
 
 <ion-content padding>
-  <ion-list>
+  <ion-list no-lines padding-left=73px>
     <ion-item>
-      <button ion-button secondary block (click)="goToPrimary()">Primary AU </button>
+      <ion-thumbnail item-start>
+        <img src="http://rotarymeansbusiness.com/wp-content/uploads/avatar-female.png">
+       <button ion-button secondary block (click)="goToPrimary()">Primary User </button>
+    </ion-thumbnail>
     </ion-item>
 
     <ion-item>
-      <button ion-button secondary block (click)="goToSecondary()">Secondary AU</button>
+      <ion-thumbnail item-start>
+        <img src="https://www.shareicon.net/data/2016/06/25/786533_people_512x512.png">
+      <button ion-button secondary block (click)="goToSecondary()">Secondary User</button>
+    </ion-thumbnail>
     </ion-item>
+
+
 
 </ion-list>
   <!--<button ion-button secondary menuToggle>Toggle Menu</button>-->
 </ion-content>
+ 

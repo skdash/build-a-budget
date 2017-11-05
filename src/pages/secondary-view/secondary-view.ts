@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 //import { BudgetViewPage } from '../budget-view/budget-view'
 import { TransactionsViewPage } from '../transactions-view/transactions-view'
 import { EditBudgetViewPage } from '../editbudget-view/editbudget-view'
+import { NotificationsViewPage } from '../notification-view/notification-view'
 
 /**
  * Generated class for the SecondaryViewPage page.
@@ -28,6 +29,10 @@ export class SecondaryViewPage {
 
   goToTransactions(){
     this.navCtrl.push(TransactionsViewPage);
+  }
+
+  goToNotifications(){
+    this.navCtrl.push(NotificationsViewPage);
   }
 
   ionViewDidLoad() {
