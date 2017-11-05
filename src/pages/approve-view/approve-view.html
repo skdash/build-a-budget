@@ -8,5 +8,19 @@
 
 
 <ion-content padding>
+  <ion-list>
+    <ion-item *ngFor="let user of filterItemsOfType()" (click)="goToReview()">
+	  <ion-thumbnail item-start *ngIf="user.gender == 'Female'; else elseBlock">
+      	<img src="http://rotarymeansbusiness.com/wp-content/uploads/avatar-female.png">
+      </ion-thumbnail>
+      <ng-template #elseBlock>
+      	<img src="http://www.clker.com/cliparts/c/4/0/e/1197115544208915882acspike_male_user_icon.svg.hi.png" width=60px>&nbsp;
+      </ng-template>
+   	  <h2>{{user.first_name}} {{user.last_name}}</h2>
+      <p>{{user.credit_card_number}}</p>
+  	  <ion-badge color="secondary" item-end *ngIf="(user.is_married == true)">1</ion-badge>    
+    </ion-item>
 
+</ion-list>
+  <!--<button ion-button secondary menuToggle>Toggle Menu</button>-->
 </ion-content>
