@@ -19,6 +19,8 @@ import { StartBudgetViewPage } from '../pages/startbudget-view/startbudget-view'
 import { EditBudgetViewPage } from '../pages/editbudget-view/editbudget-view'
 import { ReviewBudgetViewPage } from '../pages/reviewbudget-view/reviewbudget-view'
 import { SubmitBudgetViewPage } from '../pages/submitbudget-view/submitbudget-view'
+import { NotificationsViewPage } from '../pages/notification-view/notification-view'
+
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -40,7 +42,8 @@ import { RestapiServiceProvider } from '../providers/restapi-service/restapi-ser
     StartBudgetViewPage,
     EditBudgetViewPage,
     ReviewBudgetViewPage,
-    SubmitBudgetViewPage
+    SubmitBudgetViewPage,
+    NotificationsViewPage
   ],
   imports: [
     BrowserModule,
@@ -63,7 +66,8 @@ import { RestapiServiceProvider } from '../providers/restapi-service/restapi-ser
     StartBudgetViewPage,
     EditBudgetViewPage,
     ReviewBudgetViewPage,
-    SubmitBudgetViewPage
+    SubmitBudgetViewPage,
+    NotificationsViewPage
   ],
   providers: [
     StatusBar,
